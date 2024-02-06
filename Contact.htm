@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Contact</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            background-repeat: no-repeat;
+            /* margin: 0;
+            padding: 0; */
+            /* background-image: url(bg.jpg); */
+            background-size: 1550px 696px;
+            background-attachment:fixed;
+            color:rgb(255, 255, 255);
+        }
+
+        h1 {
+            text-align: center;
+            color: #e7e7e7;
+            position: relative;
+        }
+        h1::after{
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            height: 4px;
+            width: 100%;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+            transition: 0.3s;
+            transition-timing-function: ease-in-out;
+            transform: scaleX(0);;
+        }
+        h1:hover::after{
+            transform: scaleX(1);
+        }
+
+        label{
+            position: relative;
+        }
+        label::after{
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            height: 4px;
+            width: 100%;
+            left: 0;
+            background-color: rgb(238, 234, 234);
+            transition: 0.3s;
+            transition-timing-function: ease-in-out;
+            transform: scaleX(0);;
+        }
+        label:hover::after{
+            transform: scaleX(1);
+        }
+
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            /* background-color: #fff; */
+            padding: 20px;
+            border-radius: 8px;
+            border: solid 3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 3px solid #ddd;
+            border-radius: 5px;
+            background: transparent;
+            color: #f4f4f4;
+            transition: 0.4s ease;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #0f56a3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0853a2;
+            box-shadow: 0 0 5px rgb(28, 57, 112), 0 0 20px rgb(28, 57, 112), 0 0 60px rgb(28, 57, 112);
+        }
+        /* button{
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgb(7, 86, 172), 0 0 25px rgb(7, 86, 172),;
+        }
+        button:hover{
+            box-shadow: 0 0 5px rgb(7, 86, 172), 0 0 25px rgb(7, 86, 172), 0 0 50px rgb(7, 86, 172), 0 0 100px rgb(7, 86, 172) ;
+        } */
+    </style>
+</head>
+<body>
+    <h1>Add New Contact</h1>
+
+    <div class="container">
+        <form action="process.php" method="post">
+            <label for="name"><ion-icon name="person-outline"></ion-icon>Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="mobile"><ion-icon name="call-outline" ></ion-icon>Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" required>
+
+            <label for="email"><ion-icon name="mail-outline"></ion-icon>Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="gender"><ion-icon name="male-female-sharp"></ion-icon>Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="locality"><ion-icon name="location-outline"></ion-icon>Locality:</label>
+            <input type="text" id="locality" name="locality" required>
+
+            <button type="submit">Add Contact</button>
+        </form>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
